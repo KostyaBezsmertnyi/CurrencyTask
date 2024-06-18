@@ -7,14 +7,12 @@ import utils.LoggingRequestFilter;
 
 public class BaseTest {
 
-
     @BeforeAll
     public static void setBaseUrl() {
 
         RestAssured.baseURI = "https://open.er-api.com/v6/latest/";
 
     }
-
 
     protected RequestSpecification createRequest() {
         return RestAssured.given()
