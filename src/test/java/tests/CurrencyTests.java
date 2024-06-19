@@ -1,7 +1,7 @@
 package tests;
 
 import consts.CurrencyEndpoints;
-import consts.StringUtils;
+import utils.StringUtils;
 import io.qameta.allure.Description;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -17,8 +17,8 @@ import java.util.stream.Stream;
 
 import static consts.Errors.*;
 import static consts.StatusCodes.*;
-import static consts.StringUtils.generateRandomString;
-import static consts.StringUtils.generateRandomText;
+import static utils.StringUtils.generateRandomString;
+import static utils.StringUtils.generateRandomText;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -112,7 +112,7 @@ public class CurrencyTests extends BaseTest {
                 .pathParam("currency", currencyUsd)
                 .get(CurrencyEndpoints.GET_CURRENCY_ENDPOINT)
                 .then()
-                .statusCode(SUCCESS_CODE)
+                .statusCode(200)
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/get_currency.json"));
 
     }

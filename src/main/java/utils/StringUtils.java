@@ -1,4 +1,4 @@
-package consts;
+package utils;
 
 import com.github.javafaker.Faker;
 import org.apache.commons.lang3.RandomStringUtils;
